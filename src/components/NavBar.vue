@@ -117,7 +117,7 @@ nav {
 }
 
 .malo {
-    height: 12vh;
+    height: 20vh;
 }
 
 #arribita {

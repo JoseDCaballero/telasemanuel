@@ -7,7 +7,8 @@ import { AboutPage,
          CategoriesPage, 
          NewAccount, 
          NotFound,
-         TelasEmanuel } from './pages/index.js'
+         HomeTienda,
+         HomeTapiceria } from './pages/index.js'
 
 const routes = [
   {
@@ -67,10 +68,19 @@ const routes = [
     }
   },
   {
-    path: '/telasemanuel',
-    component: TelasEmanuel,
+    path: '/store',
+    component: HomeTienda,
     meta: {
-      title: 'Telas Emanuel',
+      title: 'Tienda',
+      layout: DefaultLayout
+    }
+  },
+  {
+    path: '/upholstery',
+    component: HomeTapiceria,
+    meta: {
+      title: 'Tapiceria',
+      layout: DefaultLayout
     }
   },
 ];
