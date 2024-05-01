@@ -8,6 +8,7 @@ export default defineConfig({
   plugins: [
     vue(),
   ],
+  base:'https://josedcaballero.github.io/telasemanuel/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
