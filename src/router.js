@@ -1,6 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import DefaultLayout from './layouts/DefaultLayout.vue';
-import { AboutPage, HomePage, ReceptionPage, LoginPage, CategoriesPage, NewAccount, NotFound } from './pages/index.js'
+import { AboutPage, 
+         HomePage, 
+         ReceptionPage, 
+         LoginPage, 
+         CategoriesPage, 
+         NewAccount, 
+         NotFound,
+         TelasEmanuel } from './pages/index.js'
 
 const routes = [
   {
@@ -57,6 +64,13 @@ const routes = [
     meta: {
         title: 'Página no encontrada',
         layout: DefaultLayout
+    }
+  },
+  {
+    path: '/telasemanuel',
+    component: TelasEmanuel,
+    meta: {
+      title: 'Telas Emanuel',
     }
   },
 ];
