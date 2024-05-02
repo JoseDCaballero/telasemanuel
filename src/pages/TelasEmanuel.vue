@@ -57,7 +57,7 @@ main {
 .sombra{    
     -webkit-text-stroke: 1.9px black; /* Para navegadores WebKit */
     color: white; /* Color del texto */
-    font-size: 50px;
+    font-size: 7vw;
     font-family: Arial, Helvetica, sans-serif;
 }
 
