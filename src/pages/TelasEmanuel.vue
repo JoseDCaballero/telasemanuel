@@ -1,5 +1,6 @@
 <template>
-    <main>
+    <h1>¿Dónde quiere comprar?</h1>
+    <main>        
         <div class="primero">
             <router-link to="/upholstery">
                 <div id="tapiceria">
@@ -79,5 +80,11 @@ a {
  .primero, .segundo {    
     padding-top: 22px;
     width: 45%;
+}
+
+h1{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
 }
 </style>
