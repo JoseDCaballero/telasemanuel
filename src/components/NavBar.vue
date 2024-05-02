@@ -1,27 +1,4 @@
 <script setup>
-// import { onMounted, onUnmounted, ref } from 'vue';
-
-// const links = ref([
-//   {path: '/', name: 'HomePage'},
-//   {path: '/about', name: 'Acerca'},
-//   {path: '/reception', name: 'Recepción'},
-// ]);
-
-// const isMobile = ref(window.innerWidth <= 768);
-
-// const updateIsMobile = () => isMobile.value = window.innerWidth <= 768;
-
-// onMounted(() => {
-//   window.addEventListener('resize', updateIsMobile);
-//   //window.addEventListener('tokenChanged', updateIsAuthenticated);
-//   //updateIsAuthenticated()
-// });
-
-// onUnmounted(() => {
-//   window.removeEventListener('resize', updateIsMobile);
-//   //window.removeEventListener('tokenChanged', updateIsAuthenticated);
-// });
-
 function closeMenu() {
     document.getElementById("menu-toggle").checked = false;
 }

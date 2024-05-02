@@ -3,14 +3,14 @@
         <div class="primero">
             <router-link to="/upholstery">
                 <div id="tapiceria">
-                    <h1>Tapicería</h1>
+                    <h1 class="sombra">Tapicería</h1>
                 </div>
             </router-link>
         </div>
         <div class="segundo">
             <router-link to="/store">
                 <div id="tienda">
-                    <h1>Tienda</h1>
+                    <h1 class="sombra">Tienda</h1>
                 </div>
             </router-link>
         </div>
@@ -22,19 +22,53 @@ main {
     display: flex;
     justify-content: space-between;
     padding: 0% 9%;
-    background-color: #000;
+    /*background-color: #0081CF;*/
+    height: 75vh;        
 }
 
-#tapiceria,
-#tienda {
+#tienda{
     flex: 20;
     /* Que ocupen el mismo espacio */
-    background-color: burlywood;
+    background-image: url("/src/images/paratienda.png");
+    background-size: cover;
+    height: 68vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s ease-in;   
+    cursor:pointer;
+    border: 4px solid #000;
 }
 
-#tapiceria:hover,
-#tienda:hover {
-    background-color: rgb(143, 119, 88);
+#tapiceria{
+    flex: 20;
+    /* Que ocupen el mismo espacio */
+    background-image: url("/src/images/paratapiceria.png");
+    background-size: cover;
+    height: 68vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s ease-in;   
+    cursor:pointer;
+    border: 4px solid #000;
+}
+
+.sombra{    
+    -webkit-text-stroke: 1.9px black; /* Para navegadores WebKit */
+    color: white; /* Color del texto */
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#tapiceria:hover{
+    background-image: url("/src/images/paratapiceriacopia.png");    
+    background-size: cover;
+}
+
+#tienda:hover{
+    background-image: url("/src/images/paratiendacopia.png");
+    background-size: cover;
 }
 
 a {
@@ -42,12 +76,8 @@ a {
     color: #000;
 }
 
- .primero {
-    
+ .primero, .segundo {    
+    padding-top: 22px;
     width: 45%;
 }
-.segundo{
-    
-    width: 45%;
-} 
 </style>

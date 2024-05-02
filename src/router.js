@@ -2,15 +2,22 @@ import { createRouter, createWebHistory } from 'vue-router'
 import DefaultLayout from './layouts/DefaultLayout.vue';
 import { AboutPage, 
          HomePage, 
-         ReceptionPage, 
          LoginPage, 
-         CategoriesPage, 
+         ReceptionPage,
          NewAccount, 
          NotFound,
          HomeTienda,
          HomeTapiceria } from './pages/index.js'
 
 const routes = [
+  {
+    path: '/telasemanuel',
+    component: HomePage,
+    meta: {
+      title: 'Elección',
+      layout: DefaultLayout
+    }
+  },
   {
     path: '/',
     component: HomePage,
@@ -28,26 +35,10 @@ const routes = [
     }      
   },
   {
-    path: '/reception',
-    component: ReceptionPage,
-    meta: {
-      title: 'Recepcion',
-      layout: DefaultLayout
-    }
-  },
-  {
     path: '/login',
     component: LoginPage,
     meta: {
       title: 'Iniciar sesión',
-      layout: DefaultLayout
-    }
-  },
-  {
-    path: '/categories',
-    component: CategoriesPage,
-    meta: {
-      title: 'Categorías',
       layout: DefaultLayout
     }
   },
