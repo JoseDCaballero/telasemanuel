@@ -48,9 +48,7 @@ function closeMenu() {
                 </div>
             </router-link>-->
             <div id="fondo">
-                <a href="https://www.facebook.com/profile.php?id=61558219467442" target="_blank">
-                    <img src="/src/images/logo.png">
-                </a>
+                <img src="/src/images/logo.png">
             </div>
         </nav>
     </div>

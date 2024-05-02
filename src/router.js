@@ -3,7 +3,6 @@ import DefaultLayout from './layouts/DefaultLayout.vue';
 import { AboutPage, 
          HomePage, 
          LoginPage, 
-         ReceptionPage,
          NewAccount, 
          NotFound,
          HomeTienda,
