@@ -2,12 +2,19 @@
 function closeMenu() {
     document.getElementById("menu-toggle").checked = false;
 }
+
+/*document.oncopy = event => {
+    event.preventDefault();
+    event.clipboardData.setData('text/plain',
+        'Un texto diferente'
+    )
+}*/
 </script>
 
 <template>
     <div class="malo">
         <nav>
-            <h1>Versión de prueba</h1>
+            <h1>probna verzija</h1>
             <main>
                 <input type="checkbox" id="menu-toggle">
                 <label for="menu-toggle" class="hamburger-menu">

@@ -13,7 +13,7 @@ const routes = [
     path: '/telasemanuel',
     component: HomePage,
     meta: {
-      title: 'Elección',
+      title: 'Elige dónde vas a comprar',
       layout: DefaultLayout
     }
   },
@@ -21,7 +21,7 @@ const routes = [
     path: '/',
     component: HomePage,
     meta: {
-      title: 'Inicio',
+      title: 'Elige dónde vas a comprar',
       layout: DefaultLayout
     }
   },
@@ -29,7 +29,7 @@ const routes = [
     path: '/about',
     component: AboutPage,
     meta: {
-      title: 'Acerca de',
+      title: 'Sobre nosotros',
       layout: DefaultLayout
     }      
   },
@@ -37,7 +37,7 @@ const routes = [
     path: '/login',
     component: LoginPage,
     meta: {
-      title: 'Iniciar sesión',
+      title: 'Inicia sesión en tu cuenta',
       layout: DefaultLayout
     }
   },
@@ -45,7 +45,7 @@ const routes = [
     path: '/register',
     component: NewAccount,
     meta: {
-      title: 'Crear cuentas',
+      title: 'Crea tu cuenta nueva',
       layout: DefaultLayout
     }
   },
