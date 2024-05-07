@@ -7,6 +7,7 @@ function closeMenu() {
 <template>
     <div class="malo">
         <nav>
+            <h1>Versión de prueba</h1>
             <main>
                 <input type="checkbox" id="menu-toggle">
                 <label for="menu-toggle" class="hamburger-menu">
