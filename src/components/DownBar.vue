@@ -91,7 +91,4 @@ button:hover {
 .espacio{
     padding-top: 4vh;
 }
-.down{
-
-}
 </style>

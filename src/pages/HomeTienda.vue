@@ -8,7 +8,7 @@ import ComingSoon from '../components/ComingSoon.vue'
         <h1>Bienvenido a la tienda virtual de <router-link to="/about"><a>Telas Emanuel</a></router-link></h1>
 
         <div id="verdadero">
-            <h2>A continuación se mostrarán las categorías de nuestros productos disponibles</h2>
+            <h2>A continuación se mostrarán nuestros productos disponibles por categorías</h2>
             <Coming-Soon />
         </div>
     </main>
