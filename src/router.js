@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import DefaultLayout from './layouts/DefaultLayout.vue';
+import LayoutAccount from './layouts/LayoutAccount.vue';
 import { AboutPage, 
          HomePage, 
          LoginPage, 
@@ -38,7 +39,7 @@ const routes = [
     component: LoginPage,
     meta: {
       title: 'Inicia sesión en tu cuenta',
-      layout: DefaultLayout
+      layout: LayoutAccount
     }
   },
   {
@@ -46,7 +47,7 @@ const routes = [
     component: NewAccount,
     meta: {
       title: 'Crea tu cuenta nueva',
-      layout: DefaultLayout
+      layout: LayoutAccount
     }
   },
   {
