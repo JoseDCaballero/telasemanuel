@@ -1,5 +1,5 @@
 <script>
-import NavBar from  '../components/NavBar.vue'
+import NavBar from '../components/NavBar.vue'
 import DownBar from '../components/DownBar.vue'
 
 export default {
@@ -9,7 +9,7 @@ export default {
 }
 </script>
 <template>
- <NavBar />
- <slot></slot>
- <DownBar />
+  <NavBar />
+  <slot></slot>
+  <DownBar />
 </template>

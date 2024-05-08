@@ -1,13 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import DefaultLayout from './layouts/DefaultLayout.vue';
 import LayoutAccount from './layouts/LayoutAccount.vue';
-import { AboutPage, 
-         HomePage, 
-         LoginPage, 
-         NewAccount, 
-         NotFound,
-         HomeTienda,
-         HomeTapiceria } from './pages/index.js'
+import {
+  AboutPage,
+  HomePage,
+  LoginPage,
+  NewAccount,
+  NotFound,
+  HomeTienda,
+  HomeTapiceria
+} from './pages/index.js'
 
 const routes = [
   {
@@ -32,7 +34,7 @@ const routes = [
     meta: {
       title: 'Sobre nosotros',
       layout: DefaultLayout
-    }      
+    }
   },
   {
     path: '/login',
@@ -54,8 +56,8 @@ const routes = [
     path: '/:pathMatch(.*)*',
     component: NotFound,
     meta: {
-        title: 'Página no encontrada',
-        layout: DefaultLayout
+      title: 'Página no encontrada',
+      layout: DefaultLayout
     }
   },
   {
