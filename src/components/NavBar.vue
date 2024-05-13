@@ -6,15 +6,27 @@ function closeMenu() {
 /*document.oncopy = event => {
     event.preventDefault();
     event.clipboardData.setData('text/plain',
-        'Un texto diferente'
+        'Un texto diferente \n'
     )
 }*/
+
+function handleClickOutside(event) {
+    const menu = document.querySelector('.menu');
+    const menuToggle = document.getElementById('menu-toggle');
+
+    // Verificar si el clic no ocurrió dentro del menú ni en el botón del menú
+    if (!menu.contains(event.target) && event.target !== menuToggle) {
+        closeMenu();
+    }
+}
+
+// Agregar un evento de clic al cuerpo del documento
+document.addEventListener('click', handleClickOutside);
 </script>
 
 <template>
     <div class="malo">
         <nav>
-            <h1>probna verzija</h1>
             <main>
                 <input type="checkbox" id="menu-toggle">
                 <label for="menu-toggle" class="hamburger-menu">
