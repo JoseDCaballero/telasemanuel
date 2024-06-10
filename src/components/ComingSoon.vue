@@ -1,7 +1,7 @@
 <template>
     <div class="cate">
         <router-link to="/" id="solo">
-            <marquee scrollamount="25">Próximamente...</marquee>
+            <h3>Próximamente...</h3>
             <p style="font-size: 20px;">Puede hacer clic aquí para regresar al menú de inicio</p>
         </router-link>        
     </div>

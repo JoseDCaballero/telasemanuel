@@ -1,33 +1,48 @@
 <script setup>
 import { useRouter } from 'vue-router'
+import axios from 'axios'
+
 const router = useRouter()
-const showing = () => {
-    let buena = document.getElementById('password');
-    let mala = document.getElementById('confirm_password');
-    if (buena.value !== mala.value) {
-        alert("Las contraseñas no coinciden. Intente de nuevo");
+
+const createUser = () => {
+    const email = document.getElementById("emayl").value;
+    const password = document.getElementById("pasword").value;
+    const mala = document.getElementById('confirm_password').value;
+
+    if (password !== mala) {
+        console.log("Las contraseñas no son correctas");
+        alert("Las contraseñas no coinciden. Intente de nuevo");        
     } else {
-        alert("Cuenta creada con 'éxito'");
-        router.push('/');
+        axios.post(import.meta.env.VITE_API_TELASEMANUEL + '/register/', {
+            mail: email,
+            password: password
+        })
+            .then(response => {
+                // La solicitud se completó con éxito
+                console.log(response.data); // Mensaje de inicio de sesión exitoso
+                alert("Ha creado su usuario correctamente");
+                router.push('/login'); // Redirigir a la página de inicio después del inicio de sesión
+            })
+            .catch(error => {
+                // Ocurrió un error al procesar la solicitud
+                console.error(error.response.data); // Mensaje de error de inicio de sesión
+                alert("No se encontró el usuario, por lo tanto no se inició la sesión");
+            });
     }
-}
+};
 </script>
 <template>
     <main>
         <div class="signup-container">
             <h2>Crear cuenta</h2>
-            <form @submit.prevent="showing">
-                <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" required>
-                </div>
+            <form @submit.prevent="createUser">
                 <div class="form-group">
                     <label for="email">Correo electrónico</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="emayl" name="email" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Contraseña</label>
-                    <input type="password" id="password" name="password" required>
+                    <input type="password" id="pasword" name="password" required>
                 </div>
                 <div class="form-group">
                     <label for="confirm_password">Confirmar contraseña</label>
@@ -50,7 +65,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 108.5vh;
+    height: 94vh;
     background-color: #fff;
     font-family: "Poppins", sans-serif;
     font-weight: 100;

@@ -17,7 +17,7 @@ const routes = [
     component: HomePage,
     meta: {
       title: 'Elige dónde vas a comprar',
-      layout: DefaultLayout
+      layout: LayoutAccount
     }
   },
   {
@@ -25,7 +25,7 @@ const routes = [
     component: HomePage,
     meta: {
       title: 'Elige dónde vas a comprar',
-      layout: DefaultLayout
+      layout: LayoutAccount
     }
   },
   {

@@ -1,22 +1,33 @@
 <script setup>
+import { useRouter } from 'vue-router'
+import { onMounted, ref } from 'vue'
+
+const router = useRouter()
+
+const token = localStorage.getItem('access_token');    
+
 function closeMenu() {
-    document.getElementById("menu-toggle").checked = false;
+    document.getElementById("menu-toggle").checked = false;        
 }
 
-/*document.oncopy = event => {
-    event.preventDefault();
-    event.clipboardData.setData('text/plain',
-        'Un texto diferente \n'
-    )
-}*/
+const logoutUser = () => {
+    let fff = confirm("¿Deseas cerrar sesión?")
+
+    if(fff === true){
+        localStorage.removeItem('access_token');
+        console.log("Se borró el token");
+        alert("Sesión finalizada")
+        router.push("/")        
+    }
+    window.location.reload();// Recargar la página después de cerrar sesión
+}
 
 function handleClickOutside(event) {
     const menu = document.querySelector('.menu');
-    const menuToggle = document.getElementById('menu-toggle');
-
+    const menuToggle = document.getElementById('menu-toggle');    
     // Verificar si el clic no ocurrió dentro del menú ni en el botón del menú
     if (!menu.contains(event.target) && event.target !== menuToggle) {
-        closeMenu();
+        closeMenu();        
     }
 }
 
@@ -32,8 +43,26 @@ document.addEventListener('click', handleClickOutside);
                 <label for="menu-toggle" class="hamburger-menu">
                     <div class="line"></div>
                     <div class="line"></div>
-                    <div class="line"></div>
+                    <div class="line"></div>                    
+                    <div v-if="!token">
                     <div id="menu" class="menu">
+                        <label for="menu-toggle" class="close-button">&#10006;</label>
+                        <div style="height: 50px;"></div>
+                        <div style="background-color: #fff; border-top: 2px solid #000; height: 100vh;">                            
+                            <router-link to="/" @click="closeMenu()">
+                                <span>Inicio</span>
+                            </router-link>
+                            <router-link to="/about" @click="closeMenu()">
+                                <span>Acerca</span>
+                            </router-link>
+                            <router-link to="/login" @click="closeMenu()">
+                                <span>Login</span>
+                            </router-link>                  
+                        </div>
+                    </div>
+                    </div>
+                    <div v-else>
+                        <div id="menu" class="menu">
                         <label for="menu-toggle" class="close-button">&#10006;</label>
                         <div style="height: 50px;"></div>
                         <div style="background-color: #fff; border-top: 2px solid #000; height: 100vh;">
@@ -43,30 +72,14 @@ document.addEventListener('click', handleClickOutside);
                             <router-link to="/about" @click="closeMenu()">
                                 <span>Acerca</span>
                             </router-link>
-                            <router-link to="/login" @click="closeMenu()">
-                                <span>Login</span>
-                            </router-link>
+                            <router-link to="/" @click="logoutUser()">
+                                <span>Logout</span>
+                            </router-link>     
                         </div>
                     </div>
+                    </div>
                 </label>
-            </main>
-            <!--<router-link to="/">
-                <div class="home">
-                    <span><h1>Inicio</h1></span>
-                </div>
-            </router-link>    
-
-            <router-link to="/about">                
-                <div class="about">
-                    <span><h1>Acerca</h1></span>
-                </div>
-            </router-link>                    
-
-            <router-link to="/login">                
-                <div class="recept">
-                    <span><h1>Login</h1></span>
-                </div>
-            </router-link>-->
+            </main>        
             <div id="fondo">
                 <img src="/src/images/logo.png">
             </div>

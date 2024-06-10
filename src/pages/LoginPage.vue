@@ -1,58 +1,56 @@
 <script setup>
 import { useRouter } from 'vue-router'
-const router = useRouter()
-const showing = () => {
-    alert("Sesión iniciada");
-    router.push('/')
-}
+import axios from 'axios'
 
-/*const submitForm = () => {
-  isLoading.value = true
-  console.log(import.meta.env.VITE_API_URL+'/token/login');
-  axios.post(
-      import.meta.env.VITE_API_URL+'/token/login',
-      {
-        form_data: true,
-        username: username.value,
-        password: password.value
-      },
-      {
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
+const router = useRouter()
+
+const loginUser = async () => {
+    const email = document.getElementById("emayl").value;
+    const password = document.getElementById("pasword").value;
+
+    try {
+        const response = await axios.post(import.meta.env.VITE_API_TELASEMANUEL + '/login/', {
+            mail: email,
+            password: password
+        });
+
+        // Verifica que response y response.data no son undefined
+        if (response && response.data) {
+            const accessToken = response.data.access_token;
+            console.log('Token recibido:', accessToken);
+            localStorage.setItem('access_token', accessToken);
+            console.log(response.data); // Mensaje de inicio de sesión exitoso
+            alert("Se ha iniciado sesión");                
+            router.push('/'); // Redirigir a la página de inicio después del inicio de sesión
+            //window.location.reload();
+        } else {
+            console.error('Response or response data is undefined');
         }
-      })
-      .then(response => {
-        localStorage.setItem('token', JSON.stringify(response.data.access_token));
-        window.dispatchEvent(new Event('tokenChanged'))
-        getUserInfo();
-        modalTitle.value = '¡Bienvenido!'
-        modalContent.value = `En un momento serás redirigido a tu página de aulas.`
-        showModal.value = true // Mostrar modal
-        setTimeout(() => {
-        router.push('/classrooms')
-        },2500);
-        isLoading.value = false // Terminó de cargar normalmente
-    }).catch(() => {
-    modalTitle.value = 'Credenciales incorrectas'
-    modalContent.value = '¿Olvidaste tu contraseña? ¡Pues no hay problema! <br> ...Solo tienes que recordarla.'
-    showModal.value = true // Mostrar modal
-    isLoading.value = false // Terminó de cargar con error
-})
-}*/
+    } catch (error) {
+        // Ocurrió un error al procesar la solicitud
+        if (error.response && error.response.data) {
+            console.error(error.response.data); // Mensaje de error de inicio de sesión        
+            alert("No se encontró al usuario");
+        } else {
+            console.error(error); // Error general
+            alert("Ocurrió un error inesperado");
+        }
+    }
+};
 </script>
 
 <template>
     <main>
         <div class="login-container">
             <h2>Iniciar Sesión</h2>
-            <form @submit.prevent="showing">
+            <form @submit.prevent="loginUser">
                 <div class="form-group">
-                    <label for="username">Nombre de usuario</label>
-                    <input type="text" id="username" name="username" required>
+                    <label for="username">Correo electrónico</label>
+                    <input type="email" id="emayl" name="email" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Contraseña</label>
-                    <input type="password" id="password" name="password" required>
+                    <input type="password" id="pasword" name="password" required>
                 </div>
                 <button type="submit">Iniciar Sesión</button>
             </form><br>
@@ -102,7 +100,7 @@ label {
     margin-bottom: 5px;
 }
 
-input[type="text"],
+input[type="email"],
 input[type="password"] {
     width: calc(100% - 20px);
     /* Restar el padding */
