@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue'
+import HomeTienda from './HomeTienda.vue';
 
 const token = localStorage.getItem('access_token')
 
@@ -14,27 +15,13 @@ onMounted(() => {
         <h1>Para poder acceder a nuestro catálogo de productos, debe iniciar sesión</h1>
         <main>
             <router-link to="/login">
-                <button id="loginbtn">Ir al inicio de sesión</button>
+                <button id="loginbtn">Iniciar sesión</button>
             </router-link>            
         </main>
     </div>
     <div v-else>
-        <h1>¿Dónde quiere comprar?</h1>
         <main id="main">
-            <div class="primero">
-                <router-link to="/upholstery">
-                    <div id="tapiceria">
-                        <h1 class="sombra">Tapicería</h1>
-                    </div>
-                </router-link>
-            </div>
-            <div class="segundo">
-                <router-link to="/store">
-                    <div id="tienda">
-                        <h1 class="sombra">Tienda</h1>
-                    </div>
-                </router-link>
-            </div>
+            <HomeTienda />
         </main>
     </div>
 </template>

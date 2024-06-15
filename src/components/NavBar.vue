@@ -4,10 +4,10 @@ import { onMounted, ref } from 'vue'
 
 const router = useRouter()
 
-const token = localStorage.getItem('access_token');    
+const token = ref(localStorage.getItem('access_token'));    
 
 function closeMenu() {
-    document.getElementById("menu-toggle").checked = false;        
+    document.getElementById("menu-toggle").checked = false;    
 }
 
 const logoutUser = () => {
@@ -75,6 +75,9 @@ document.addEventListener('click', handleClickOutside);
                             <router-link to="/" @click="logoutUser()">
                                 <span>Logout</span>
                             </router-link>     
+                            <router-link to="/categories">
+                                <button>Ir a las pruebas</button>
+                            </router-link>
                         </div>
                     </div>
                     </div>

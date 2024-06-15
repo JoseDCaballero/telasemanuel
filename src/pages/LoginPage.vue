@@ -19,7 +19,7 @@ const loginUser = async () => {
             const accessToken = response.data.access_token;
             console.log('Token recibido:', accessToken);
             localStorage.setItem('access_token', accessToken);
-            console.log(response.data); // Mensaje de inicio de sesión exitoso
+            //console.log(response.data); // Mensaje de inicio de sesión exitoso
             alert("Se ha iniciado sesión");                
             router.push('/'); // Redirigir a la página de inicio después del inicio de sesión
             //window.location.reload();

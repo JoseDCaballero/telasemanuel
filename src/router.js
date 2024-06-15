@@ -8,7 +8,8 @@ import {
   NewAccount,
   NotFound,
   HomeTienda,
-  HomeTapiceria
+  HomeTapiceria,
+  ReceptionPage
 } from './pages/index.js'
 
 const routes = [
@@ -73,6 +74,14 @@ const routes = [
     component: HomeTapiceria,
     meta: {
       title: 'Tapiceria',
+      layout: DefaultLayout
+    }
+  },
+  {
+    path: '/categories',
+    component: ReceptionPage,
+    meta: {
+      title: 'Categorías',
       layout: DefaultLayout
     }
   },
