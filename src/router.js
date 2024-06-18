@@ -9,7 +9,7 @@ import {
   NotFound,
   HomeTienda,
   HomeTapiceria,
-  ReceptionPage
+  CategoriesPage
 } from './pages/index.js'
 
 const routes = [
@@ -17,7 +17,7 @@ const routes = [
     path: '/telasemanuel',
     component: HomePage,
     meta: {
-      title: 'Elige dónde vas a comprar',
+      title: 'Telas Emanuel',
       layout: LayoutAccount
     }
   },
@@ -25,7 +25,7 @@ const routes = [
     path: '/',
     component: HomePage,
     meta: {
-      title: 'Elige dónde vas a comprar',
+      title: 'Telas Emanuel',
       layout: LayoutAccount
     }
   },
@@ -78,10 +78,10 @@ const routes = [
     }
   },
   {
-    path: '/categories',
-    component: ReceptionPage,
+    path: '/category/:categoryName',
+    component: CategoriesPage,
     meta: {
-      title: 'Categorías',
+      title: 'Productos',
       layout: DefaultLayout
     }
   },

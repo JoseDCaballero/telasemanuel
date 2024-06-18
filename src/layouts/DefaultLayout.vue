@@ -11,5 +11,4 @@ export default {
 <template>
   <NavBar />
   <slot></slot>
-  <DownBar />
 </template>

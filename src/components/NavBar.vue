@@ -75,9 +75,6 @@ document.addEventListener('click', handleClickOutside);
                             <router-link to="/" @click="logoutUser()">
                                 <span>Logout</span>
                             </router-link>     
-                            <router-link to="/categories">
-                                <button>Ir a las pruebas</button>
-                            </router-link>
                         </div>
                     </div>
                     </div>

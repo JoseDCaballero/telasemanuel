@@ -16,21 +16,18 @@ const loginUser = async () => {
 
         // Verifica que response y response.data no son undefined
         if (response && response.data) {
-            const accessToken = response.data.access_token;
-            console.log('Token recibido:', accessToken);
+            const accessToken = response.data.access_token;            
             localStorage.setItem('access_token', accessToken);
-            //console.log(response.data); // Mensaje de inicio de sesión exitoso
             alert("Se ha iniciado sesión");                
             router.push('/'); // Redirigir a la página de inicio después del inicio de sesión
-            //window.location.reload();
         } else {
-            console.error('Response or response data is undefined');
+            console.error('Error');
         }
     } catch (error) {
         // Ocurrió un error al procesar la solicitud
         if (error.response && error.response.data) {
             console.error(error.response.data); // Mensaje de error de inicio de sesión        
-            alert("No se encontró al usuario");
+            alert("Error");
         } else {
             console.error(error); // Error general
             alert("Ocurrió un error inesperado");
